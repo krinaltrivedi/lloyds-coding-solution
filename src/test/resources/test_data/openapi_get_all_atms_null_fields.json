@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "LastUpdated": "2022-02-08T15:19:51.266Z",
+    "TotalResults": 1909,
+    "Agreement": "Use of the APIs and any related data will be subject to the terms of the Open Licence and subject to terms and conditions",
+    "License": "https://www.openbanking.org.uk/open-licence",
+    "TermsOfUse": "https://www.openbanking.org.uk/terms"
+  },
+  "data": [
+    {
+      "Brand": [
+        {
+          "BrandName": "Lloyds Bank",
+          "ATM": [
+            {
+              "Identification": null,
+              "SupportedCurrencies": null,
+              "Location": {
+                "PostalAddress": {
+                  "AddressLine": null,
+                  "StreetName": null,
+                  "TownName": null,
+                  "CountrySubDivision": null,
+                  "Country": null,
+                  "PostCode": null
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

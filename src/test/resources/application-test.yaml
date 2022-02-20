@@ -1,0 +1,7 @@
+lloyds:
+  apis:
+    open-banking:
+      all-atms:
+        url: http://localhost:9090/all-atms
+  identification: 12345
+

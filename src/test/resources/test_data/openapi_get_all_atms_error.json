@@ -1,0 +1,5 @@
+{
+  "status": "400",
+  "title": "Bad request",
+  "description": "You have sent a request which could not be understood."
+}

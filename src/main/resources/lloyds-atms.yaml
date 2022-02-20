@@ -1,0 +1,97 @@
+openapi: 3.0.0
+servers:
+  - url: http://localhost:8080
+info:
+  description: This is an API to get all ATMs in the Lloyds Banking Group
+  version: "1.0.0"
+  title: Lloyds Banking Group ATMs
+  contact:
+    email: krinal_trivedi@yahoo.co.uk
+tags:
+  - name: ATMs
+
+paths:
+  /atms:
+    get:
+      tags:
+        - ATMs
+      summary: retrieves details of every ATM in the Lloyds Banking Group
+      operationId: allAtms
+      description: |
+        Retrieves details of every ATM in the Lloyds Banking Group.
+
+      responses:
+        '200':
+          description: list of all ATMs
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AtmResponse'
+        '404':
+          description: resource not found
+        '500':
+          description: error occurred on the server while processing
+components:
+  schemas:
+    AtmResponse:
+      type: object
+      required:
+        - identification
+        - atms
+        - manufacturer
+        - releaseDate
+      properties:
+        identification:
+          type: string
+          format: uuid
+          example: 12345
+        atms:
+          type: array
+          items:
+            $ref: '#/components/schemas/AtmDetail'
+    AtmDetail:
+      type: object
+      required:
+        - brandName
+      properties:
+        brandName:
+          type: string
+          example: Lloyds
+        identification:
+          type: string
+          example: ABC123
+        supportedCurrencies:
+          type: array
+          items:
+            type: string
+            example: GBP
+        address:
+          $ref: '#/components/schemas/Address'
+    Address:
+      type: object
+      required:
+        - addressLine1
+        - postcode
+        - country
+      properties:
+        addressLine1:
+          type: string
+          example: 1 Victoria Street
+        addressLine2:
+          type: string
+          example: Address line 2
+        town:
+          type: string
+          example: Consett
+        city:
+          type: string
+          example: London
+        county:
+          type: string
+          example: County Durham
+        postcode:
+          type: string
+          example: EC1A 1BB
+        country:
+          type: string
+          example: GB
