@@ -1,11 +1,15 @@
 package com.krinal.lloyds.interview_coding_solution.atm.client.response.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 
 import javax.validation.Valid;
-import javax.validation.constraints.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.List;
 
+@Data
 public class Atm {
     @NotNull(message = "Identification must not be null")
     @Size(min = 1, message = "Identification must have atleast 1 character")
@@ -22,28 +26,4 @@ public class Atm {
     @Valid
     @JsonProperty("Location")
     private Location location;
-
-    public String getIdentification() {
-        return identification;
-    }
-
-    public void setIdentification(String identification) {
-        this.identification = identification;
-    }
-
-    public List<String> getSupportedCurrencies() {
-        return supportedCurrencies;
-    }
-
-    public void setSupportedCurrencies(List<String> supportedCurrencies) {
-        this.supportedCurrencies = supportedCurrencies;
-    }
-
-    public Location getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
-    }
 }

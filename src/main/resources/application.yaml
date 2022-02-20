@@ -1,0 +1,6 @@
+lloyds:
+  apis:
+    open-banking:
+      all-atms:
+        url: https://api.lloydsbank.com/open-banking/v2.2/atms
+  identification: 30847300
